@@ -9,6 +9,10 @@ pipeline {
         string defaultValue: 'main', description: 'branch of larkbot repo', name: 'GIT_VALUE', trim: true
     }
 
+    environment {
+        CONFIG_PATH = "/mnt/lijialun/larkbot_config/sso_config.yaml"
+    }
+
     stages {
         stage('Git checkout') {
             steps {
@@ -40,6 +44,7 @@ pipeline {
                             }
                         }
                         sh """
+                            cp ${CONFIG_PATH} ./config.yaml
                             sh build.sh
                         """
                     }
