@@ -1,0 +1,5 @@
+PyYAML
+fastapi
+uvicorn[standard]
+
+openxlab
