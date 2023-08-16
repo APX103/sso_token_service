@@ -37,7 +37,7 @@ pipeline {
                         script {
                             try {
                                 sh """
-                                    docker stop mm_lark_bot
+                                    docker stop sso_token_service
                                 """
                             } catch(e) {
                                 echo """Container not exist."""
